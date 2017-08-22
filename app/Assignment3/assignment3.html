@@ -1,0 +1,27 @@
+           
+<head>                   
+    <title>Assignment3</title>
+ <style>
+   table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+  background-color:#FFFFFF;
+  font-family:arial;
+  }
+</style>      
+</head>   
+  <div ng-app="app">     
+    <div ng-controller="assignment3Controller">     
+      <table>
+        <th>Name</th><th>Last Name</th><th>Designation</th>
+		<th>Phone</th>
+        <tr ng-repeat="emp in employees">
+          <td>{{ emp.firstName }}</td>
+          <td>{{ emp.lastName }}</td>
+          <td>{{ emp.jobTitle }}</td>
+          <td>{{ emp.phone }}</td>
+        </tr>
+</table>
+  </div>    
+</div>            

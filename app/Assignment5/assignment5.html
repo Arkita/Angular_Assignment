@@ -1,0 +1,63 @@
+
+<body ng-controller="assignment5Controller" ng-app="app">
+ <div class="container">
+   <div id="signup">
+      <div class="signup-screen">
+         <div class="space-bot text-center">
+            <h1>Sign up</h1>
+           <div class="divider"></div>
+         </div>
+           <form class="form-register" method="post" ng-submit="submitForm(register.$valid)" name="register" novalidate >
+	            <div class="input-field col s6">
+                   <label for="first-name">First Name</label>
+              <input id="first-name" type="text" class="validate" ng-model="user.firstName" required>
+           </div>
+            <div class="input-field col s6">
+                     <label for="last-name">Last Name</label>
+              <input id="last-name" type="text" class="validate" ng-model="user.lastName"  required>
+             </div>
+             <div class="input-field col s6">
+                <label for="email">Email</label>
+              <input id="email" type="email" name="email" ng-model="user.email" class="validate" required>
+              </div>
+             <div class="input-field col s6">
+               <label for="phonenumber">Phone</label>
+              <input id="phonenumber" type="number" class="validate" ng-model="user.phonenumber" required>
+            </div>
+              <div class="input-field col s6">
+             Select gender
+             <label><input type="radio" name="SGender" class="validate" ng-change="RadioChange('Male')" ng-model="user.Gender" value="Male" required/> Male </label>
+             <label><input type="radio" name="SGender" class="validate" ng-change="RadioChange('Female')" ng-model="user.Gender" value="Female" required/> Female </label>
+             </div>
+              <div class="input-field col s6" ng-app="app" ng-controller="assignment5Controller">
+              <label for="location">location</label>
+              <select ng-model="user.selectedName" class="validate" ng-options="x for x in names" required >
+              </select>
+              </div>
+              
+              <div class="space-top text-center">
+               <button type="submit" ng-disabled="form-register.$invalid"  class="waves-effect waves-light btn done">
+               <i class="material-icons left">save</i> 
+               </button>  
+               <button type="button" ng-click="reset()" class="waves-effect waves-light btn cancel">
+               <i class="material-icons left">clear</i>
+               </button>
+              </div>
+              
+              <!-- <div>
+                <div>{{user.firstName}}</div>
+                 <div>{{user.lastName}}</div>
+                 <div>{{user.email}}</div>
+                 <div>{{user.phonenumber}}</div>
+                 <div>{{user.Gender}}</div>
+                 <div>{{user.selectedName}}</div>
+              </div> -->
+
+             </form>
+            <div class="index-right" ng-repeat="item in userArray">
+        {{ item }}
+    </div>
+           </div>
+        </div>
+    </div>
+</body>

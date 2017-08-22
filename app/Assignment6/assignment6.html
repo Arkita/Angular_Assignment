@@ -1,0 +1,33 @@
+
+<div ng-app="app">
+<style>
+   table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+  background-color:#FFFFFF;
+  font-family:arial;
+  }
+</style>
+    <div>
+
+         <div id="table1" ng-controller="assignment6Controller">
+      <table cellpadding="0" border="0" cellspacing="0">
+        <tr id="heading">
+          <th></th>
+          <th> Name</th>
+          <th>cost</th>
+        </tr>
+
+        <tr class="tab" ng-repeat="x in names">
+           <td> <input type="checkbox" ng-model="item.isSelected" ng-change="value(item.isSelected,x)" />
+        </td><td>{{x.name}}</td> <td>{{x.cost}}</td></tr>
+      </table>
+        <hr/>
+            
+         
+      <div>Total cost {{selectedItems| getcost}}</div>
+      <!-- <div>Total cost {{Selected| total}}</div> -->
+    </div>
+    
+</div>
